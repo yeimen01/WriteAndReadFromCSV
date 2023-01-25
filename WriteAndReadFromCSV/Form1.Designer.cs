@@ -32,6 +32,7 @@
             this.tabAcciones = new System.Windows.Forms.TabControl();
             this.Escribir = new System.Windows.Forms.TabPage();
             this.pHeader = new System.Windows.Forms.Panel();
+            this.btnLimpiarDatos = new System.Windows.Forms.Button();
             this.txtRutaDeArchivo = new System.Windows.Forms.TextBox();
             this.btnCargarCSV = new System.Windows.Forms.Button();
             this.lblDetalle = new System.Windows.Forms.Label();
@@ -64,8 +65,6 @@
             this.pDetail = new System.Windows.Forms.Panel();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.lblPeriodoPago = new System.Windows.Forms.Label();
-            this.Leer = new System.Windows.Forms.TabPage();
-            this.btnLimpiarDatos = new System.Windows.Forms.Button();
             this.pGeneral.SuspendLayout();
             this.tabAcciones.SuspendLayout();
             this.Escribir.SuspendLayout();
@@ -86,7 +85,6 @@
             // tabAcciones
             // 
             this.tabAcciones.Controls.Add(this.Escribir);
-            this.tabAcciones.Controls.Add(this.Leer);
             this.tabAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabAcciones.Location = new System.Drawing.Point(0, 0);
             this.tabAcciones.Name = "tabAcciones";
@@ -145,6 +143,16 @@
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(786, 247);
             this.pHeader.TabIndex = 40;
+            // 
+            // btnLimpiarDatos
+            // 
+            this.btnLimpiarDatos.Location = new System.Drawing.Point(595, 85);
+            this.btnLimpiarDatos.Name = "btnLimpiarDatos";
+            this.btnLimpiarDatos.Size = new System.Drawing.Size(93, 23);
+            this.btnLimpiarDatos.TabIndex = 61;
+            this.btnLimpiarDatos.Text = "Limpiar todo";
+            this.btnLimpiarDatos.UseVisualStyleBackColor = true;
+            this.btnLimpiarDatos.Click += new System.EventHandler(this.btnLimpiarDatos_Click);
             // 
             // txtRutaDeArchivo
             // 
@@ -443,26 +451,6 @@
             this.lblPeriodoPago.Size = new System.Drawing.Size(100, 23);
             this.lblPeriodoPago.TabIndex = 26;
             // 
-            // Leer
-            // 
-            this.Leer.Location = new System.Drawing.Point(4, 24);
-            this.Leer.Name = "Leer";
-            this.Leer.Padding = new System.Windows.Forms.Padding(3);
-            this.Leer.Size = new System.Drawing.Size(792, 493);
-            this.Leer.TabIndex = 1;
-            this.Leer.Text = "Leer CSV";
-            this.Leer.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiarDatos
-            // 
-            this.btnLimpiarDatos.Location = new System.Drawing.Point(595, 85);
-            this.btnLimpiarDatos.Name = "btnLimpiarDatos";
-            this.btnLimpiarDatos.Size = new System.Drawing.Size(93, 23);
-            this.btnLimpiarDatos.TabIndex = 61;
-            this.btnLimpiarDatos.Text = "Limpiar todo";
-            this.btnLimpiarDatos.UseVisualStyleBackColor = true;
-            this.btnLimpiarDatos.Click += new System.EventHandler(this.btnLimpiarDatos_Click);
-            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -489,7 +477,6 @@
         private TabControl tabAcciones;
         private TabPage Escribir;
         private Label lblPeriodoPago;
-        private TabPage Leer;
         private Label lblMontoDet;
         private Panel pDetail;
         private DataGridView dgvDetalle;
