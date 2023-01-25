@@ -568,6 +568,9 @@ namespace WriteAndReadFromCSV
                     //Sending data
                     ReadFile(Data);
 
+                    //Cambiando los datos
+                    Escribir.Text = $"Escribir CSV ({dtDetalle.Rows.Count})";
+
                     Mensaje("Archivos cargados de manera exitosa", "WriteAndRead", MessageBoxIcon.Information);
                 }
 
@@ -592,6 +595,9 @@ namespace WriteAndReadFromCSV
 
                     //Cleaning DataTable
                     dtDetalle.Rows.Clear();
+
+                    //Cambiando los datos
+                    Escribir.Text = $"Escribir CSV";
 
                     Mensaje("Información borrada correctamente.", "WriteAndRead", MessageBoxIcon.Information);
                 }
