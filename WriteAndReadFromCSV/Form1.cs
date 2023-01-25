@@ -567,6 +567,8 @@ namespace WriteAndReadFromCSV
 
                     //Sending data
                     ReadFile(Data);
+
+                    Mensaje("Archivos cargados de manera exitosa", "WriteAndRead", MessageBoxIcon.Information);
                 }
 
             }
