@@ -40,7 +40,7 @@ namespace WriteAndReadFromCSV
                 foreach (DataRow row in dtDetalle.Rows)
                 {
                     //Transforming row into array, and joining all the array separated by "," value
-                    Detail = string.Join(",", row.ItemArray.Select(x => x.ToString()).ToArray());
+                    Detail = string.Join(",", row.ItemArray.Select(x => x?.ToString()).ToArray());
 
                     //Writing Detail on the CSV file
                     writer.WriteLine(Detail);
@@ -69,12 +69,10 @@ namespace WriteAndReadFromCSV
 
         public void ReadFile(string[] Data)
         {
-            string? tipoDoc;
-
             foreach (string linea in Data)
             {
-                tipoDoc = linea.Split(",")[0].ToString();
-                switch (tipoDoc.ToUpper())
+                //First letter to determinate
+                switch (linea.Split(",")[0].ToString().ToUpper())
                 {
                     case "E":
                         FillHeaderInformation(linea);
@@ -301,6 +299,7 @@ namespace WriteAndReadFromCSV
             txtNoCta.Text = "";
             txtMontoTotal.Text = "";
         }
+
         private void CleanDetailFields()
         {
             //Cleaning the information
@@ -596,8 +595,12 @@ namespace WriteAndReadFromCSV
                     //Cleaning DataTable
                     dtDetalle.Rows.Clear();
 
-                    //Cambiando los datos
+                    //Changin tab displayed name
                     Escribir.Text = $"Escribir CSV";
+
+                    //Hidding path
+                    txtRutaDeArchivo.Text = "";
+                    txtRutaDeArchivo.Visible = false;
 
                     Mensaje("Información borrada correctamente.", "WriteAndRead", MessageBoxIcon.Information);
                 }
